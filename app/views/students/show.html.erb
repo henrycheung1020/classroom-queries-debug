@@ -101,7 +101,8 @@
 <hr>
 
 <ul>
-  <% enrollments = Enrollment.where({:id => @student.id }) %>
+  <% the_id = @student.id%>
+  <% enrollments = Enrollment.where({:id => the_id }) %>
   <% enrollments.each do |enrollment| %>
     <% course = Course.where({ :id => enrollment.course_id }).at(0) %>
     <li>
